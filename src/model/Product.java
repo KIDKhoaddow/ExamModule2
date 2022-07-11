@@ -2,7 +2,7 @@ package model;
 
 import java.util.Comparator;
 
-public class Product implements Comparator<Product> {
+public class Product implements Comparable<Product>{
     private  String idProduct;
     private  String nameProduct;
     private  double priceProduct;
@@ -52,9 +52,10 @@ public class Product implements Comparator<Product> {
         this.describeProduct = describeProduct;
     }
 
+
     @Override
-    public int compare(Product o1, Product o2) {
-        return (int)(o1.getPriceProduct()- o2.getPriceProduct());
+    public int compareTo(Product o) {
+        return (int) (this.getPriceProduct()-o.getPriceProduct());
     }
 
     @Override

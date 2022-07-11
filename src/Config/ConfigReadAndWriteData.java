@@ -3,15 +3,16 @@ package Config;
 import model.Product;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigReadAndWriteData {
 
     public static String PATH="C:\\Users\\Khoaddow\\Documents\\Project\\Exercise\\Exam\\src\\data\\";
-    public void writeFileProduct(List<Product> productList) {
+    public void writeFileProduct(List<Product> productList,String path) {
         try {
-            File file = new File("FileProductList.csv");
+            File file = new File(path);
             if (!file.exists()) {
                 file.createNewFile();
             }
@@ -27,10 +28,10 @@ public class ConfigReadAndWriteData {
         }
     }
 
-    public List<Product> readFileProductList() {
+    public List<Product> readFileProductList(String path) {
        List<Product> products = new ArrayList<>();
         try {
-            File file = new File("FileProductList.csv");
+            File file = new File(path);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String value;
             while ((value = bufferedReader.readLine()) != null) {

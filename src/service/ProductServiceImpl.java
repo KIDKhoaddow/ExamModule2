@@ -5,11 +5,12 @@ import model.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ProductServiceImpl implements IProductService {
     static String PRODUCT_PATH = ConfigReadAndWriteData.PATH + "product.csv";
-    static private List<Product> productList = new ConfigReadAndWriteData().readFileProductList();
+    static private List<Product> productList = new ConfigReadAndWriteData().readFileProductList(PRODUCT_PATH);
 
     @Override
     public List<Product> getList() {
@@ -39,7 +40,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void saveList() {
-        new ConfigReadAndWriteData().writeFileProduct(productList);
+        new ConfigReadAndWriteData().writeFileProduct(productList,PRODUCT_PATH);
     }
 
     @Override
@@ -116,8 +117,10 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public Void sortList() {
-//         Collections.sort(productList);
-         return null;
+    public void sortList() {
+         Collections.sort(productList);
+
     }
+
+
 }

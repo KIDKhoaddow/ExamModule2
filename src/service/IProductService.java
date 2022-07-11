@@ -16,7 +16,7 @@ public interface IProductService {
 
     Product getHighestPriceProduct();
     Product deleteProduct(int index );
-    Void sortList();
+    void sortList();
 
     List<Product> getList();
 }
