@@ -21,9 +21,9 @@ public class ProductController {
         commonView.showMessage("7. Đọc từ file");
         commonView.showMessage("8. Ghi vào file");
         commonView.showMessage("9. Thoát");
-        String selection= commonView.inputString("Chọn chức năng",scanner);
+        String selection= commonView.inputString("Chọn chức năng : ",scanner);
         while(true){
-            if(!commonView.checkInputNumber(1,2,selection)){
+            if(!commonView.checkInputNumber(1,9,selection)){
                 commonView.showMessage("Wrong number , try again please");
             }else {
              break;
@@ -101,10 +101,10 @@ public class ProductController {
             }
         }
         switch ( Integer.parseInt( selection)){
-            case 1:commonView.displayObject(editName(commonView, scanner, index));
-            case 2:commonView.displayObject(editPrice(commonView, scanner, index));
-            case 3:commonView.displayObject(editAmount(commonView, scanner, index));
-            case 4:commonView.displayObject(editDescribe(commonView, scanner, index));
+            case 1:commonView.displayObject(editName(commonView, scanner, index));break;
+            case 2:commonView.displayObject(editPrice(commonView, scanner, index));break;
+            case 3:commonView.displayObject(editAmount(commonView, scanner, index));break;
+            case 4:commonView.displayObject(editDescribe(commonView, scanner, index));break;
             case 5: return;
         }
         chooseFunctionEdit(commonView,scanner,index);

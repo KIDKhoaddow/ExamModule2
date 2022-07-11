@@ -10,6 +10,7 @@ public class Product implements Comparable<Product>{
     private  String describeProduct;
 
     public Product(String idProduct,String nameProduct, double priceProduct, int amountProduct, String describeProduct) {
+        this.idProduct=idProduct;
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
         this.amountProduct = amountProduct;
