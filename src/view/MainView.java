@@ -1,7 +1,6 @@
 package view;
 
 import controller.ProductController;
-import jdk.jfr.internal.tool.Main;
 
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class MainView {
     CommonView commonView =new CommonView();
     Scanner scanner=new Scanner(System.in);
 
-    public  void MainView(){
+    public MainView(){
         productController.chooseFunction(scanner,commonView);
     }
 
